@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 20vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blanchedalmond;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  margin: 20px;
+}
+
+.single {
+  align-self: center;
+}
+
+.todoinput {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.addtodoinput {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+.addtodobtn {
+  margin: 0 10px 0 10px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.singletodolinks {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.generalbtn {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  background: none;
+  cursor: pointer;
+}
+.markasdoneatag {
+  margin: 0 10px 0 10px;
+}
+
+.alltodosbtn {
+  margin: 0 0 0 10px;
+}
+
+.deleteatag,
+.markasdoneatag,
+.adjustatag {
+  align-self: center;
+}
+
+.deletecontainer,
+.donecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.generealmargin {
+  margin: 10px 0 10px 0;
+}

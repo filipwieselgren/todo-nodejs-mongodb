@@ -1,0 +1,30 @@
+<form class="todoinput" action="/" method="post">
+  <input
+    class="addtodoinput"
+    type="text"
+    name="description"
+    placeholder="Write your todo here"
+  />
+  <input
+    class="generalbtn addtodobtn"
+    type="submit"
+    name="Add"
+    value="Add todo"
+  />
+</form>
+<div class="todos">
+  {{#each todos}}
+    {{#if done}}
+      <ul>
+        <li><a
+            class="desription line"
+            href="/todos/{{id}}"
+          >{{description}}</a></li>
+      </ul>
+    {{else}}
+      <ul>
+        <li><a class="desription" href="/todos/{{id}}">{{description}}</a></li>
+      </ul>
+    {{/if}}
+  {{/each}}
+</div>

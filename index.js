@@ -1,10 +1,25 @@
+require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 
 const app = express();
 
+app.engine(
+  "hbs",
+  exphbs.engine({
+    extname: ".hbs",
+    defaultLayout: "main",
+  })
+);
+
+app.set("view engine", "hbs");
+
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.render("home");
 });
 
 app.listen(8000, () => {
