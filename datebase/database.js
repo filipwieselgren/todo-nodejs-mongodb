@@ -13,7 +13,7 @@ async function getDb() {
 async function getTodosCollection() {
   const db = await getDb();
 
-  return db.collection("books");
+  return db.collection("todos");
 }
 
 module.exports = { getTodosCollection };

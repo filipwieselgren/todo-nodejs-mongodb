@@ -1,3 +1,5 @@
+<p class="error">{{error}}</p>
+
 <form class="todoinput" action="/" method="post">
   <input
     class="addtodoinput"
@@ -18,12 +20,12 @@
       <ul>
         <li><a
             class="desription line"
-            href="/todos/{{id}}"
+            href="/todos/{{_id}}"
           >{{description}}</a></li>
       </ul>
     {{else}}
       <ul>
-        <li><a class="desription" href="/todos/{{id}}">{{description}}</a></li>
+        <li><a class="desription" href="/todos/{{_id}}">{{description}}</a></li>
       </ul>
     {{/if}}
   {{/each}}
