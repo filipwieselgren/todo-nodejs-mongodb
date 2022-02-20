@@ -16,4 +16,4 @@ async function getTodosCollection() {
   return db.collection("todos");
 }
 
-module.exports = { getTodosCollection };
+module.exports = { getTodosCollection, getDb };

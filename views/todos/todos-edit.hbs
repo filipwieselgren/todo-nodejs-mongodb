@@ -1,0 +1,18 @@
+<div class="headercontainer">
+  <h2>Redigera todo</h2>
+</div>
+
+<p class="error">{{error}}</p>
+
+<div class="formcontainer">
+  <form action="/todos/{{_id}}/redigera" method="post">
+    <input
+      type="text"
+      name="description"
+      placeholder="Todo"
+      value="{{description}}"
+    />
+
+    <input type="submit" value="Spara" />
+  </form>
+</div>

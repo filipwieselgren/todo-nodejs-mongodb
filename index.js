@@ -19,11 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  console.log(process.env.MONGODB_CONNECTION_STRING);
-  res.render("home");
-});
-
 app.use("/", todosRouter);
 
 app.listen(8000, () => {

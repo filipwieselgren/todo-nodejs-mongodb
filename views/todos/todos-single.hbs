@@ -1,0 +1,13 @@
+<div class="headercontainer">
+  <h2>Todo: {{description}}</h2>
+</div>
+
+<form
+  class="deletebtncontainer"
+  action="/todos/{{_id}}/ta-bort"
+  }
+  method="post"
+>
+  <a href="/todos/{{_id}}/redigera" class="adjustbtn">Redigera todo</a>
+  <input type="submit" value="Ta bort todo" class="deletebtn" />
+</form>
