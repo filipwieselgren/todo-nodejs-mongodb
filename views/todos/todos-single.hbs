@@ -2,12 +2,6 @@
   <h2>Todo: {{description}}</h2>
 </div>
 
-<form
-  class="deletebtncontainer"
-  action="/todos/{{_id}}/ta-bort"
-  }
-  method="post"
->
-  <a href="/todos/{{_id}}/redigera" class="adjustbtn">Redigera todo</a>
-  <input type="submit" value="Ta bort todo" class="deletebtn" />
+<form class="adjustbtncontainer" action="/todos/{{_id}}/redigera" method="get">
+  <input class="generalbtn deletebtn" type="submit" value="Adjust todo" />
 </form>

@@ -5,14 +5,15 @@
 <p class="error">{{error}}</p>
 
 <div class="formcontainer">
-  <form action="/todos/{{_id}}/redigera" method="post">
+  <form class="saveadjusttodo" action="/todos/{{_id}}/redigera" method="post">
     <input
+      class="adjusttodoinput"
       type="text"
       name="description"
       placeholder="Todo"
       value="{{description}}"
     />
 
-    <input type="submit" value="Spara" />
+    <input class="generalbtn saveadjustbtn" type="submit" value="Save" />
   </form>
 </div>

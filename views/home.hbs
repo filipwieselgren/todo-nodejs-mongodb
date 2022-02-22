@@ -17,15 +17,68 @@
 <div class="todos">
   {{#each todos}}
     {{#if done}}
-      <ul>
-        <li><a
-            class="desription line"
+      <ul class="ulcontainer">
+        <li class="licontainer"><a
+            class="description line"
             href="/todos/{{_id}}"
-          >{{description}}</a></li>
+          >{{description}}</a>
+          <div class="donedeletebtncontainer">
+            <form
+              class="deletebtncontainer"
+              action="/todos/{{_id}}/markera-som-klar"
+              method="get"
+            >
+              <input
+                class="generalbtn done"
+                type="submit"
+                value="Marke as done"
+              />
+            </form>
+            <form
+              class="deletebtncontainer"
+              action="/todos/{{_id}}/ta-bort"
+              method="post"
+            >
+              <input
+                class="generalbtn deletebtn"
+                type="submit"
+                value="Delete todo"
+              />
+            </form>
+          </div>
+        </li>
       </ul>
     {{else}}
-      <ul>
-        <li><a class="desription" href="/todos/{{_id}}">{{description}}</a></li>
+      <ul class="ulcontainer">
+        <li class="licontainer"><a
+            class="description"
+            href="/todos/{{_id}}"
+          >{{description}}</a>
+          <div class="donedeletebtncontainer">
+            <form
+              class="deletebtncontainer"
+              action="/todos/{{_id}}/markera-som-klar"
+              method="get"
+            >
+              <input
+                class="generalbtn done"
+                type="submit"
+                value="Marke as done"
+              />
+            </form>
+            <form
+              class="deletebtncontainer"
+              action="/todos/{{_id}}/ta-bort"
+              method="post"
+            >
+              <input
+                class="generalbtn deletebtn"
+                type="submit"
+                value="Delete todo"
+              />
+            </form>
+          </div>
+        </li>
       </ul>
     {{/if}}
   {{/each}}

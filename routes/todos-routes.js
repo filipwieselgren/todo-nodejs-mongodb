@@ -6,7 +6,11 @@ const { ObjectId } = require("mongodb");
 
 router.get("/", async (req, res) => {
   const colletion = await db.getTodosCollection();
-  const todos = await colletion.find().toArray();
+  const todos = await colletion
+    .find()
+    .sort([["created", "desc"]])
+    .toArray();
+
   console.log(todos);
 
   res.render("home", { todos });
@@ -26,17 +30,13 @@ router.post("/todos/skapa", async (req, res) => {
     const result = await todoCollection.insertOne(todo);
 
     res.redirect("/");
-    // console.log(todo);
   } else {
     res.render("home", {
       error: "Fel på inmatad data",
-      //Behåller datan i inputfältet
+
       todo: todo.description,
     });
   }
-
-  // console.log(todo);
-  // res.redirect("/");
 });
 
 router.get("/todos/:id", async (req, res) => {
@@ -118,15 +118,34 @@ router.post("/todos/:id/redigera", async (req, res, next) => {
       res.redirect("/");
 
       console.log(result);
+      console.log(req.body.done);
     } else {
       res.render("todos/todos-edit", {
         error: "Fel på inmatad data",
         _id: id,
-        //Behåller datan i inputfältet
+
         description: todo.description,
       });
     }
   }
+});
+
+router.get("/todos/:id/markera-som-klar", async (req, res) => {
+  const id = ObjectId(req.params.id);
+  const todosCollection = await db.getTodosCollection();
+  const getDb = await db.getDb();
+
+  await getDb.collection("todos").findOne({ _id: id }, async (err, todo) => {
+    const updateTodo = {
+      done: !todo.done,
+    };
+
+    await getDb
+      .collection("todos")
+      .updateOne({ _id: id }, { $set: { done: !todo.done } });
+    console.log(todo.done);
+    res.redirect("/");
+  });
 });
 
 module.exports = router;
