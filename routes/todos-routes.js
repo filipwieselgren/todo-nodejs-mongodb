@@ -17,11 +17,9 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/todos/skapa", async (req, res) => {
-  const date = new Date();
-  let currentDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   const todo = {
     description: req.body.description,
-    created: currentDate,
+    created: new Date().toLocaleString(),
     done: false,
   };
 

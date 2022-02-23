@@ -1,7 +1,13 @@
-<div class="headercontainer">
-  <h2>Todo: {{description}}</h2>
-</div>
+<div class="adjustcontainer">
+  <div class="headercontainer">
+    <h2>Todo: {{description}}</h2>
+  </div>
 
-<form class="adjustbtncontainer" action="/todos/{{_id}}/redigera" method="get">
-  <input class="generalbtn deletebtn" type="submit" value="Adjust todo" />
-</form>
+  <form
+    class="adjustbtncontainer"
+    action="/todos/{{_id}}/redigera"
+    method="get"
+  >
+    <input class="generalbtn deletebtn" type="submit" value="Adjust todo" />
+  </form>
+</div>

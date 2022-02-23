@@ -25,6 +25,38 @@ body {
   width: 25%;
 }
 
+.adjustcontainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.adjustbtncontainer {
+  margin-top: 10px;
+}
+
+.adjusttodoinput {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #333;
+  width: 80%;
+}
+
+.formcontainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.saveadjusttodo {
+  display: flex;
+  margin-top: 10px;
+}
+
+.saveadjustbtn {
+  margin-left: 10px;
+}
+
 .todoinput {
   display: flex;
   justify-content: space-between;
@@ -60,6 +92,8 @@ body {
 
 .donedeletebtncontainer {
   display: flex;
+  justify-content: flex-end;
+  width: 50%;
 }
 
 li {
@@ -87,4 +121,20 @@ a {
   max-width: max-content;
   background: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 653px) {
+  .main {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .main {
+    width: 50%;
+  }
 }
